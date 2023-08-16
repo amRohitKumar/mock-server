@@ -13,12 +13,15 @@ app.get("/", (req, res) => {
 });
 
 app.post("/response", (req, res) => {
-  res
-    .status(200)
-    .send({
-      msg: "I'm AI, nice to chat with you",
-      image: ["https://picsum.photos/800"],
-    });
+  res.status(200).send({
+    msg: "I'm AI, nice to chat with you",
+    image: ["https://picsum.photos/800"],
+    feature_dict: {
+      tshirt: "polo",
+      colur: "yellow",
+      jeans: "blue",
+    },
+  });
 });
 
 const port = process.env.LOCALPORT || 5000;
