@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const cookieParser = require('cookie-parser')
+const cookieParser = require("cookie-parser");
 const app = express();
 
 app.use(cors());
@@ -13,7 +13,12 @@ app.get("/", (req, res) => {
 });
 
 app.post("/response", (req, res) => {
-  res.status(200).send("I'm AI, nice to chat with you");
+  res
+    .status(200)
+    .send({
+      msg: "I'm AI, nice to chat with you",
+      image: "https://picsum.photos/800",
+    });
 });
 
 const port = process.env.LOCALPORT || 5000;
