@@ -17,7 +17,7 @@ app.post("/response", (req, res) => {
     .status(200)
     .send({
       msg: "I'm AI, nice to chat with you",
-      image: "https://picsum.photos/800",
+      image: ["https://picsum.photos/800"],
     });
 });
 
